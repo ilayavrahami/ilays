@@ -146,11 +146,14 @@
             padding: 30px;
             border-radius: 10px;
             width: 300px;
+            height: 180px; /* גובה אחיד לכרטיסים כדי שייראו מסודרים */
             border: 1px solid rgba(0, 255, 204, 0.2);
             transition: all 0.3s;
             backdrop-filter: blur(5px);
             text-align: right;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
@@ -160,7 +163,8 @@
         }
 
         .card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            margin-top: 0;
             margin-bottom: 15px;
             color: white;
             display: flex;
@@ -183,8 +187,9 @@
 
         .card p {
             color: #94a3b8;
-            font-size: 1rem;
+            font-size: 0.95rem;
             line-height: 1.6;
+            margin: 0;
         }
 
         /* אזור יצירת קשר */
@@ -276,17 +281,24 @@
                 </div>
             </a>
 
-            <a href="https://ilayavrahami.github.io/Ilay-the-best/" target="_blank" class="card-link">
+            <a href="https://ilayavrahami.github.io/the-best-sibiling/" target="_blank" class="card-link">
                 <div class="card">
                     <h3>Ilay The Better Sibling</h3>
                     <p>מותג פרימיום שדרש מינימליזם טכנולוגי. פיתחנו עבורם אתר תדמית מהיר כמו שד, המותאם בצורה מושלמת לכל מכשיר.</p>
                 </div>
             </a>
 
-            <a href="https://ilayavrahami.github.io/aosomsy1.0/" target="_blank" class="card-link">
+            <a href="https://ilayavrahami.github.io/aosomsy/" target="_blank" class="card-link">
                 <div class="card">
                     <h3>Aosomsy</h3>
                     <p>פלטפורמת הזרמת מדיה (VOD) לסרטים וסדרות. בנינו ארכיטקטורה עמידה לעומסים עם יכולות חיפוש מהירות ועיצוב קולנועי.</p>
+                </div>
+            </a>
+
+            <a href="https://ilayavrahami.github.io/Yair-Taltalin/" target="_blank" class="card-link">
+                <div class="card">
+                    <h3>יאיר תלתלין 🎭</h3>
+                    <p>חנות דיגיטלית קסומות ותוססת לממכר תחפושות ייחודיות. בנינו פלטפורמה חווייתית ואינטראקטיבית עם דגש על צבעוניות עשירה וחווית משתמש זורמת.</p>
                 </div>
             </a>
 
