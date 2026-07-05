@@ -134,7 +134,6 @@
             margin: 0 auto;
         }
 
-        /* הגדרות עיצוב לכרטיסייה שהפכה לקישור */
         .card-link {
             text-decoration: none;
             color: inherit;
@@ -146,7 +145,7 @@
             padding: 30px;
             border-radius: 10px;
             width: 300px;
-            height: 180px; /* גובה אחיד לכרטיסים כדי שייראו מסודרים */
+            height: 180px;
             border: 1px solid rgba(0, 255, 204, 0.2);
             transition: all 0.3s;
             backdrop-filter: blur(5px);
@@ -172,7 +171,6 @@
             align-items: center;
         }
 
-        /* אייקון חץ קטן המרמז על קישור חיצוני */
         .card h3::after {
             content: "↗";
             font-size: 1.2rem;
@@ -281,14 +279,14 @@
                 </div>
             </a>
 
-            <a href="https://ilayavrahami.github.io/the-best-sibiling/" target="_blank" class="card-link">
+            <a href="https://ilayavrahami.github.io/Ilay-the-best/" target="_blank" class="card-link">
                 <div class="card">
                     <h3>Ilay The Better Sibling</h3>
                     <p>מותג פרימיום שדרש מינימליזם טכנולוגי. פיתחנו עבורם אתר תדמית מהיר כמו שד, המותאם בצורה מושלמת לכל מכשיר.</p>
                 </div>
             </a>
 
-            <a href="https://ilayavrahami.github.io/aosomsy/" target="_blank" class="card-link">
+            <a href="https://ilayavrahami.github.io/aosomsy1.0/" target="_blank" class="card-link">
                 <div class="card">
                     <h3>Aosomsy</h3>
                     <p>פלטפורמת הזרמת מדיה (VOD) לסרטים וסדרות. בנינו ארכיטקטורה עמידה לעומסים עם יכולות חיפוש מהירות ועיצוב קולנועי.</p>
@@ -316,8 +314,8 @@
             </div>
             
             <div class="input-group">
-                <label for="email">דואר אלקטרוני</label>
-                <input type="email" id="email" name="email" required placeholder="example@domain.com">
+                <label for="contact-method">דואר אלקטרוני / מספר טלפון</label>
+                <input type="text" id="contact-method" name="contact_method" required placeholder="example@domain.com או 050-1234567">
             </div>
             
             <div class="input-group">
@@ -334,10 +332,8 @@
     </footer>
 
     <script>
-        // עדכון השנה אוטומטית בפוטר
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // טיפול בשליחת הטופס דרך Formspree
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault(); 
             const form = this;
