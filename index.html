@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ilays | סוכנות דיגיטל וטכנולוגיה</title>
+    <style>
+        /* הגדרות עיצוב טכנולוגיות - Cyberpunk / Tech Vibe */
+        :root {
+            --primary-color: #00ffcc;
+            --secondary-color: #7000ff;
+            --bg-color: #050505;
+            --card-bg: rgba(15, 23, 42, 0.8);
+            --text-color: #e2e8f0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+            /* רקע רשת טכנולוגי */
+            background-image: 
+                linear-gradient(rgba(0, 255, 204, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 204, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        /* תפריט ניווט */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(5, 5, 5, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-sizing: border-box;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 255, 204, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary-color);
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            text-shadow: 0 0 8px var(--primary-color);
+        }
+
+        /* אזור פתיחה (Hero) */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--primary-color);
+            color: #000;
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.6);
+        }
+
+        /* אזור תיק עבודות / לקוחות */
+        .portfolio {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .portfolio h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* הגדרות עיצוב לכרטיסייה שהפכה לקישור */
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            border: 1px solid rgba(0, 255, 204, 0.2);
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+            text-align: right;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* אייקון חץ קטן המרמז על קישור חיצוני */
+        .card h3::after {
+            content: "↗";
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover h3::after {
+            opacity: 1;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* אזור יצירת קשר */
+        .contact-section {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, transparent, #0a0f18);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 40px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+
+        .input-group label {
+            margin-bottom: 8px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .input-group input, .input-group textarea {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: white;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* פוטר */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #02040a;
+            color: #475569;
+            border-top: 1px solid #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ilays_</div>
+        <nav>
+            <a href="#home">ראשי</a>
+            <a href="#clients">פרויקטים</a>
+            <a href="#contact">צור קשר</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>מקודדים את <span>העתיד</span> שלך</h1>
+        <p>חברת ilays מפתחת ומעצבת אתרים בטכנולוגיות המתקדמות ביותר. ביצועים מטורפים, עיצוב חדשני, והמרות ששוברות שיאים.</p>
+        <a href="#contact" class="btn">התחל פרויקט</a>
+    </section>
+
+    <section id="clients" class="portfolio">
+        <h2>מערכות שפיתחנו</h2>
+        <div class="cards">
+            
+            <a href="https://ilayavrahami.github.io/Squishy-Smash/" target="_blank" class="card-link">
+                <div class="card">
+                    <h3>Squishy Smash ✨</h3>
+                    <p>פלטפורמת איקומרס מתקדמת שבנינו עבור חברה שמוכרת סקווישים. משלבת מערכת ניהול מלאי חכמה וחווית קנייה חלקה ומהירה במיוחד.</p>
+                </div>
+            </a>
+
+            <a href="https://ilayavrahami.github.io/the-best-sibiling/" target="_blank" class="card-link">
+                <div class="card">
+                    <h3>Ilay The Better Sibling</h3>
+                    <p>מותג פרימיום שדרש מינימליזם טכנולוגי. פיתחנו עבורם אתר תדמית מהיר כמו שד, המותאם בצורה מושלמת לכל מכשיר.</p>
+                </div>
+            </a>
+
+            <a href="https://ilayavrahami.github.io/aosomsy/" target="_blank" class="card-link">
+                <div class="card">
+                    <h3>Aosomsy</h3>
+                    <p>פלטפורמת הזרמת מדיה (VOD) לסרטים וסדרות. בנינו ארכיטקטורה עמידה לעומסים עם יכולות חיפוש מהירות ועיצוב קולנועי.</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>מוכנים להמריא?</h2>
+        <p>השאירו פרטים ונחזור אליכם עם אפיון טכנולוגי לפרויקט הבא שלכם.</p>
+        
+        <form class="contact-form" id="contactForm">
+            <div class="input-group">
+                <label for="name">שם מלא / שם חברה</label>
+                <input type="text" id="name" name="name" required placeholder="למשל: סייברקופ בע&quot;מ">
+            </div>
+            
+            <div class="input-group">
+                <label for="email">דואר אלקטרוני</label>
+                <input type="email" id="email" name="email" required placeholder="example@domain.com">
+            </div>
+            
+            <div class="input-group">
+                <label for="message">ספר לנו על הפרויקט</label>
+                <textarea id="message" name="message" rows="5" required placeholder="אנחנו צריכים אתר ש..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn" style="width: 100%;">שלח הודעה</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> ilays Technologies. כל הזכויות שמורות.</p>
+    </footer>
+
+    <script>
+        // עדכון השנה אוטומטית בפוטר
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // טיפול בשליחת הטופס דרך Formspree
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            const form = this;
+            const btn = form.querySelector('button');
+            
+            btn.textContent = 'שולח נתונים...';
+            btn.style.opacity = '0.7';
+            btn.disabled = true; 
+            
+            const formData = new FormData(form);
+
+            fetch("https://formspree.io/f/xaqgvowo", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    btn.textContent = 'ההודעה נשלחה בהצלחה! ✔️';
+                    btn.style.background = 'var(--primary-color)';
+                    btn.style.color = '#000';
+                    btn.style.opacity = '1';
+                    form.reset(); 
+                } else {
+                    btn.textContent = 'שגיאה בשליחה ❌';
+                    btn.style.background = '#ff0033';
+                    btn.style.color = '#fff';
+                    btn.style.opacity = '1';
+                }
+            })
+            .catch(error => {
+                btn.textContent = 'שגיאת רשת ❌';
+                btn.style.background = '#ff0033';
+                btn.style.color = '#fff';
+                btn.style.opacity = '1';
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    btn.textContent = 'שלח הודעה';
+                    btn.style.background = 'transparent';
+                    btn.style.color = 'var(--primary-color)';
+                    btn.disabled = false;
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>
